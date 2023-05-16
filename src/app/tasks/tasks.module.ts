@@ -5,6 +5,8 @@ import { PageAddTasksComponent } from './pages/page-add-tasks/page-add-tasks.com
 import { PageEditTasksComponent } from './pages/page-edit-tasks/page-edit-tasks.component';
 import { PageDeleteTasksComponent } from './pages/page-delete-tasks/page-delete-tasks.component';
 import {SharedModule} from "../shared/shared.module";
+import {TasksRoutingModule} from "./tasks-routing.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -18,6 +20,13 @@ import {SharedModule} from "../shared/shared.module";
   imports: [
     CommonModule,
     SharedModule,
+    TasksRoutingModule,
+  ],
+  exports: [
+    PageListTasksComponent,
+    PageAddTasksComponent,
+    PageEditTasksComponent,
+    PageDeleteTasksComponent,
   ]
 })
 export class TasksModule { }
