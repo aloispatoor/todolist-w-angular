@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import {Tasks} from "../../model/tasks";
 import {TasksService} from "../../service/tasks.service";
+import {BehaviorSubject} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-page-list-tasks',
@@ -8,12 +10,10 @@ import {TasksService} from "../../service/tasks.service";
   styleUrls: ['./page-list-tasks.component.css']
 })
 export class PageListTasksComponent {
-  public collection!: Tasks[];
+  public collection$!: BehaviorSubject<Tasks[]>;
 
   constructor(private service: TasksService){
-    this.service.collection$.subscribe((data) => {
-      this.collection = data;
-      console.log(data);
-    })
+    this.collection$ = this.service.collection$;
+    this.service.refreshCollection();
   }
 }

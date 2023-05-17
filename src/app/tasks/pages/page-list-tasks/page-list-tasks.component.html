@@ -1,3 +1,5 @@
 <app-template>
-  <app-list [collection]="collection"></app-list>
+  <div *ngIf="collection$ | async as collection">
+    <app-list [collection]="collection"></app-list>
+  </div>
 </app-template>
