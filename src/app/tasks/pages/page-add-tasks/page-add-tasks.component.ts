@@ -19,6 +19,8 @@ export class PageAddTasksComponent {
     this.form = this.formBuilder.group({
       id: [this.task.id],
       content: [this.task.content],
+      description: [this.task.description],
+      deadline: [this.task.deadline],
       isDone: false,
     })
   }

@@ -3,21 +3,22 @@
     {
       "id": 1,
       "content": "Exemple de tâche",
+      "description": "Détails de la tâche",
+      "deadline": "2023-05-22",
       "isDone": false
     },
     {
       "id": 2,
-      "content": "Exemple de tâche 2",
+      "content": "2023-06-03",
+      "description": null,
+      "deadline": null,
       "isDone": false
     },
     {
       "id": 3,
-      "content": "pwet",
-      "isDone": false
-    },
-    {
-      "id": 4,
-      "content": "pwet 3",
+      "content": "Exemple de tâche 2",
+      "description": "Détails de la tâche",
+      "deadline": "2023-06-28",
       "isDone": false
     }
   ]
