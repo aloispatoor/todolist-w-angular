@@ -24,9 +24,11 @@ export class PageAddTasksComponent {
   }
 
   public onSubmit(){
-    this.service.add(this.form.value).subscribe(() => {
-      this.router.navigate([`/tasks`]);
-      console.log("Task added!");
-    })
+    if(this.task.content != null || this.task.content != ""){
+      this.service.add(this.form.value).subscribe(() => {
+        this.router.navigate([`/tasks`]);
+        console.log("Task added!");
+      });
+    }
   }
 }
