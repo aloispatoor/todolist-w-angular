@@ -26,4 +26,12 @@ export class TasksService {
   public add(task: Tasks): Observable<Tasks>{
     return this.httpClient.post<Tasks>(`${this.urlApi}/tasks`, task);
   }
+
+  public update(task: Tasks): Observable<Tasks>{
+    return this.httpClient.put<Tasks>(`${this.urlApi}/tasks/edit/${task.id}`, task);
+  }
+
+  public delete(id: number): Observable<Tasks>{
+    return this.httpClient.delete<Tasks>(`${this.urlApi}/tasks/delete/${id}`);
+  }
 }
