@@ -1,8 +1,7 @@
 import {Component} from '@angular/core';
 import {Tasks} from "../../model/tasks";
 import {TasksService} from "../../service/tasks.service";
-import {BehaviorSubject} from "rxjs";
-import {Router} from "@angular/router";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Component({
   selector: 'app-page-list-tasks',
@@ -11,9 +10,22 @@ import {Router} from "@angular/router";
 })
 export class PageListTasksComponent {
   public collection$!: BehaviorSubject<Tasks[]>;
+  // public id: number;
+  // public item$: Observable<Tasks>;
 
   constructor(private service: TasksService){
     this.collection$ = this.service.collection$;
     this.service.refreshCollection();
   }
+
+  // public setIsDone(id: number): void{
+  //   const task : Tasks = this.item$.id;
+  //   if(task.isDone === false){
+  //     task.isDone = true;
+  //   } else {
+  //     task.isDone = false;
+  //   }
+  // }
+
+
 }

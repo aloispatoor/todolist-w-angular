@@ -6,8 +6,6 @@ import { PageEditTasksComponent } from './pages/page-edit-tasks/page-edit-tasks.
 import { PageDeleteTasksComponent } from './pages/page-delete-tasks/page-delete-tasks.component';
 import {SharedModule} from "../shared/shared.module";
 import {TasksRoutingModule} from "./tasks-routing.module";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-
 
 
 @NgModule({

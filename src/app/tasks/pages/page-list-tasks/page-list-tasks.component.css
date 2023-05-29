@@ -1,0 +1,5 @@
+app-icon-check:hover,
+app-icon-delete:hover,
+app-icon-edit:hover{
+  cursor: pointer;
+}

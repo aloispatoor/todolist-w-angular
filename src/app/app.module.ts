@@ -6,17 +6,21 @@ import {AppRoutingModule} from "./app-routing.module";
 import {CoreModule} from "./core/core.module";
 import {HttpClientModule} from "@angular/common/http";
 import {UiComponent} from "./ui/components/ui/ui.component";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    HttpClientModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule,
+        HttpClientModule,
+        FontAwesomeModule,
+        SharedModule,
+    ],
   providers: [
     {
       provide: LOCALE_ID,
