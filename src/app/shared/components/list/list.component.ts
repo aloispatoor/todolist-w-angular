@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {TasksService} from "../../../tasks/service/tasks.service";
 
 @Component({
   selector: 'app-list',
@@ -7,4 +8,13 @@ import {Component, Input} from '@angular/core';
 })
 export class ListComponent {
   @Input() public collection!: any;
+  getIcons: boolean;
+
+  constructor(private service: TasksService) {
+    this.getIcons = false;
+  }
+
+  public deleteTask(id: number){
+    this.service.delete(id).subscribe();
+  }
 }

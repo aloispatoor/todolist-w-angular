@@ -1,5 +1,6 @@
 <app-template>
   <div *ngIf="collection$ | async as collection">
-    <app-list [collection]="collection"></app-list>
+    <app-list [collection]="collection">
+    </app-list>
   </div>
 </app-template>
