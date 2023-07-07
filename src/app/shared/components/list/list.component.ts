@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {TasksService} from "../../../tasks/service/tasks.service";
+import {Tasks} from "../../../tasks/model/tasks";
 
 @Component({
   selector: 'app-list',
@@ -8,13 +9,24 @@ import {TasksService} from "../../../tasks/service/tasks.service";
 })
 export class ListComponent {
   @Input() public collection!: any;
-  getIcons: boolean;
+  getIcons: null;
 
   constructor(private service: TasksService) {
-    this.getIcons = false;
+    this.getIcons = null;
+  }
+
+  public enter(i: any){
+    this.getIcons = i;
+  }
+  public leave(i: any){
+    this.getIcons = null;
   }
 
   public deleteTask(id: number){
     this.service.delete(id).subscribe();
+  }
+
+  public isDone(task: Tasks){
+    this.service.isDone(task);
   }
 }

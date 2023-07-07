@@ -4,17 +4,17 @@
     routerLink="/tasks/add">Ajouter une tâche
   </button>
   <div class="max-w-sm rounded overflow-hidden shadow-lg flex justify-between items-center"
-       *ngFor="let item of collection"
-       (mouseover)="getIcons=true"
-       (mouseout)="getIcons=false">
+       *ngFor="let item of collection; let i = index"
+       (mouseover)="enter(i)"
+       (mouseout)="leave(i)">
     <div class="px-6 py-4">
       <h2 class="text-gray-700 text-lg font-semibold">{{ item.content }}</h2>
       <p class="text-gray-700 text-base">{{ item.description }}</p>
       <small class="text-gray-700 text-xs">A faire avant le : {{ item.deadline }}</small>
     </div>
     <aside class="px-6 py-2 flex flex-col gap-2"
-           *ngIf="getIcons">
-      <app-icon-check class="text-blue-600 hover:text-blue-900"></app-icon-check>
+           *ngIf="getIcons == i">
+      <app-icon-check class="text-blue-600 hover:text-blue-900" (click)="isDone(item)"></app-icon-check>
       <app-icon-edit class="hover:text-gray-600" ></app-icon-edit>
       <app-icon-delete class="text-red-600 hover:text-red-900" (click)="deleteTask(item.id)"></app-icon-delete>
     </aside>

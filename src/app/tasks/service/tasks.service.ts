@@ -31,6 +31,10 @@ export class TasksService {
     return this.httpClient.put<Tasks>(`${this.urlApi}/tasks/edit/${task.id}`, task);
   }
 
+  public isDone(task : Tasks): boolean{
+    return task.isDone = true;
+  }
+
   public delete(id: number): Observable<Tasks>{
     return this.httpClient.delete<Tasks>(`${this.urlApi}/tasks/delete/${id}`);
   }
